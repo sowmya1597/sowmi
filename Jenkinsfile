@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git branch: 'dev', credentialsId: 'karthik', url: 'https://github.com/Charykarthik/code.git'
+               git branch: 'dev', url: 'https://github.com/sowmya1597/sowmi.git'
             }
         }
         stage("Maven Build"){
@@ -19,7 +19,7 @@ pipeline{
         }
         stage("deploy"){
             steps{
-                  deploy adapters: [tomcat9(credentialsId: '9d8b480d-8752-4e32-b5e7-9ce5fb4e48b0', path: '', url: 'http://34.135.82.198:8080/')], contextPath: 'webapps', war: 'target/*.war'
+                  deploy adapters: [tomcat9(credentialsId: '844041b8-98c9-44b8-9a64-a6b9ad320182', path: '', url: 'http://35.194.148.120:8080/')], contextPath: 'webapps', war: 'target/*.war'
                                        
             }
         }
