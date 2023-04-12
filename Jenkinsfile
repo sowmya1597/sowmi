@@ -19,7 +19,7 @@ pipeline{
         }
         stage("deploy"){
             steps{
-                  deploy adapters: [tomcat9(credentialsId: '844041b8-98c9-44b8-9a64-a6b9ad320182', path: '', url: 'http://35.194.148.120:8080/')], contextPath: 'webapps', war: 'target/*.war'
+                  deploy adapters: [tomcat9(git credentialsId: 'b7278b53-701c-439d-87a9-d419d396b8b8', url: 'https://github.com/sowmya1597/gcprepo'], contextPath: 'webapps', war: 'target/*.war'
                                        
             }
         }
